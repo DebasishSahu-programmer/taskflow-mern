@@ -22,6 +22,10 @@ const userSchema = new Schema(
       required: true,
       select: false,
     },
+    refreshToken: {
+      type: String,
+      select: false,
+    },
   },
   { timestamps: true },
 );
@@ -50,9 +54,7 @@ userSchema.methods.generateAccessToken = function () {
       name: this.name,
     },
     secret,
-    {
-      expiresIn: process.env.ACCESS_TOKEN_EXPIRY || "15m",
-    },
+    { expiresIn: process.env.ACCESS_TOKEN_EXPIRY || "15m" },
   );
 };
 
@@ -70,6 +72,6 @@ userSchema.methods.generateRefreshToken = function () {
   );
 };
 
-const User =  mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;
