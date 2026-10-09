@@ -1,9 +1,25 @@
-import React from 'react'
+import { Navigate, Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import RegisterPage from "./pages/RegisterPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
-function App() {
+export default function App() {
   return (
-    <div>App</div>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route
+        path="/tasks"
+        element={
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
-
-export default App
