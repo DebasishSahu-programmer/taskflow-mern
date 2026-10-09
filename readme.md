@@ -45,26 +45,11 @@ Live Application: https://taskflow-mern-clientsite.onrender.com
 
 ## Project Structure
 
-Taskflow - Todo Management/
-├── .gitignore
-├── readme.md
+taskflow/
 ├── client/
-│   ├── .env
-│   ├── .gitignore
-│   ├── .oxlintrc.json
-│   ├── README.md
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── vite.config.js
-│   ├── public/
 │   └── src/
-│       ├── App.jsx
-│       ├── main.jsx
-│       ├── index.css
 │       ├── app/
 │       │   └── store.js
-│       ├── assets/
 │       ├── components/
 │       │   ├── AuthBootstrap.jsx
 │       │   ├── Navbar.jsx
@@ -83,19 +68,13 @@ Taskflow - Todo Management/
 │       │   ├── HomePage.jsx
 │       │   ├── LoginPage.jsx
 │       │   └── RegisterPage.jsx
-│       └── utils/
-│           └── axios.js
+│       ├── utils/
+│       │   └── axios.js
+│       ├── App.jsx
+│       ├── main.jsx
+│       └── index.css
 └── server/
-    ├── .env
-    ├── .gitignore
-    ├── .prettierignore
-    ├── .prettierrc
-    ├── package.json
-    ├── package-lock.json
     └── src/
-        ├── app.js
-        ├── index.js
-        ├── constant.js
         ├── controllers/
         │   ├── task.controller.js
         │   └── user.controller.js
@@ -109,10 +88,13 @@ Taskflow - Todo Management/
         ├── routes/
         │   ├── task.routes.js
         │   └── user.routes.js
-        └── utils/
-            ├── ApiError.js
-            ├── ApiResponse.js
-            └── asyncHandler.js
+        ├── utils/
+        │   ├── ApiError.js
+        │   ├── ApiResponse.js
+        │   └── asyncHandler.js
+        ├── app.js
+        ├── constant.js
+        └── index.js
 
 
 ## Installation and Setup
